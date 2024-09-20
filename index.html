@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana te amo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: url('img/amar.png') no-repeat center center/cover;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('aleym.png') no-repeat center center/cover;
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 90%;
+            margin: 5% auto;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .titulo {
+            color: #bcfade;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-size: 5vw;
+            margin: 20px 0;
+            animation: fadeInOut 3s infinite;
+        }
+
+        h2 {
+            color: rgb(138, 13, 210);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-size: 4vw;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 2.2vw;
+            margin: 10px 0;
+            color: rgb(242, 137, 248);
+            transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        p:hover {
+            transform: translateY(-10px) rotate(2deg);
+            color: rgb(251, 253, 122);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(138, 13, 210, 0.6);
+        }
+
+        button {
+            font-size: 4vw;
+            padding: 20px 40px;
+            margin: 30px 0;
+            border: none;
+            background-color: #f9ed7f;
+            color: rgb(242, 137, 248);
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #87f9de;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .album {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px; /* Espacio entre las tarjetas */
+            width: 90%;
+            margin: 50px auto;
+            justify-items: center; /* Centra las imágenes */
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 250px; /* Ajuste responsivo */
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Altura fija */
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .flip-card-front {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .flip-card-back {
+            background-color: rgb(242, 137, 248);
+            color: black;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .flip-card-back p {
+            font-size: 1rem; /* Tamaño de fuente ajustado */
+            margin: 0;
+            padding: 10px;
+        }
+
+        .arrow-container {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 50px; /* Tamaño de la flecha */
+            color: rgb(105, 175, 6);
+            animation: bounce 1s infinite; /* Efecto de rebote */
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .titulo {
+                font-size: 6vw;
+            }
+            h2 {
+                font-size: 5vw;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">ALWAYS</div>
+        <h2>💕💕Mariana Ilayali Alzua Zimbron💕💕</h2>
+        <p>Solo espero que te guste, con mucho amor, Alejandro So Ro.💕💕</p>
+        <p>El 21 de septiembre siempre ha sido especial, pero este año es diferente. Este año, mis flores amarillas no solo florecen en la tierra, sino también a través de un código que escribí con dedicación y cariño.</p>
+        <p>Decidí crear algo único, algo que reflejara lo que siento por ti, así que puse mi corazón en cada línea de este programa, con la esperanza de que, al recibirlas, sientas lo mismo que yo al pensarlas.</p>
+        <p>Tal vez no alcances a ver todo lo que hay detrás de estas palabras, fotos y efectos, pero por eso me apasiona tanto la programación, y quería compartir contigo este momento que significa tanto para mí. Es una gran lección de vida, porque muchas veces no se percibe el esfuerzo que hay detrás de cada logro, y aún así, tú siempre has sido capaz de ver en mí lo que pocos ven. Aprecio profundamente cómo reconoces todo lo que hago, y por eso, compartir esto contigo lo hace aún más especial.</p>
+        <p>Estas flores no son solo un gesto, sino una manifestación de lo que construyo por y para ti. Cada pétalo digital está cargado de mis pensamientos, cada hoja virtual lleva mis suspiros, y el color vibrante de estas flores simboliza el brillo que traes a mi vida.</p>
+        <p>He programado este momento con la misma precisión y cuidado con que pienso en ti, para que las flores amarillas lleguen a ti de una manera única, creada por mis propias manos, desde el lenguaje que mejor me expresa: la tecnología. Porque a veces, el amor no solo se da en gestos, sino también en las pequeñas creaciones que nacen desde el corazón.</p>
+        <p>Hoy, te entrego estas flores a través de un clic, pero lo que realmente deseo es que recibas con ellas todo lo que mi alma quiere compartir contigo. Pero antes de eso aun quiero darte unas palabras extra que escribí desde lo más profundo de mi alma, busca en cada imagen mi amor.</p>
+    </div>
+
+    <!-- Álbum de fotos con efecto flip -->
+    <div class="album">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/foto1.jpg" alt="Foto 1">
+                </div>
+                <div class="flip-card-back">
+                    <p>Cada vez que miro tus ojos, siento que el mundo a mi alrededor se detiene, como si el tiempo se congelara en ese instante perfecto donde solo existimos tú y yo, compartiendo un vínculo tan profundo que no necesita palabras para ser comprendido.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/foto2.jpg" alt="Foto 2">
+                </div>
+                <div class="flip-card-back">
+                    <p>Cuando pienso en todo lo que hemos compartido, desde risas interminables hasta momentos de complicidad, me doy cuenta de que cada experiencia a tu lado ha sido un capítulo emocionante en nuestra historia, y no puedo esperar a escribir juntos el próximo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/foto3.jpg" alt="Foto 3">
+                </div>
+                <div class="flip-card-back">
+                    <p>Cuando estoy contigo, siento que el tiempo se vuelve maleable, como si pudiera estirarlo y hacerlo eterno, para que cada segundo a tu lado se convierta en una eternidad de momentos que nunca quiero dejar de vivir.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/foto4.jpg" alt="Foto 4">
+                </div>
+                <div class="flip-card-back">
+                    <p>Hay un millón de universos posibles, pero en cada uno de ellos, sin importar el destino o las circunstancias, estoy seguro de que siempre te buscaría, siempre te encontraría, porque eres el epicentro de todo lo que soy, la razón por la que cada latido de mi corazón tiene sentido.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/foto5.jpg" alt="Foto 5">
+                </div>
+                <div class="flip-card-back">
+                    <p>Tú eres el verso que nunca supe escribir, esa poesía escondida entre los pliegues de la vida, que al encontrarte se desplegó en mi alma con la delicadeza de un pétalo, revelando un amor tan puro que mis palabras nunca alcanzarán a describirlo por completo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/foto6.jpg" alt="Foto 6">
+                </div>
+                <div class="flip-card-back">
+                    <p>Me encanta cómo, sin importar lo caótico que sea el mundo afuera, cuando estoy contigo todo parece más claro, más sencillo, como si tu presencia fuera el equilibrio perfecto que necesito para sentirme en paz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de flechas -->
+    <div class="arrow-container">
+        <div class="arrow">⬇️</div>
+        <div class="arrow">⬇️</div>
+    </div>
+
+    <!-- Botón debajo del álbum -->
+    <button onclick="window.location.href='rosas.html'">Para ti mi amor☞💛</button>
+</body>
+</html>
+
